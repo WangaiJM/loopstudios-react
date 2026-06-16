@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+$white: hsl(0, 0, 0%);
+$black: hsl(0, 0, 100%);
+$grey: hsl(0, 0%, 85%);
+$blue: hsl(215, 30%, 92%);
+$light-blue: hsl(213, 100%, 98%);
+
+:root {
+  // color
+  --gradient: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 0.4) 40%
+  ); // space // typography
+  --ff: "Josefin Sans", sans-serif;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
