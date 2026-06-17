@@ -1,0 +1,19 @@
+@use "../index.scss" as *;
+
+.imageCard {
+  position: relative;
+
+  h2 {
+    position: absolute;
+    bottom: 2rem;
+    left: 4rem;
+    @include text-preset(5);
+    color: var(--white);
+    text-transform: uppercase;
+
+    @include breakpoint("tablet") {
+      @include text-preset(4);
+      left: 1rem;
+    }
+  }
+}

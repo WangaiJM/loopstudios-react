@@ -1,0 +1,74 @@
+@use "../index.scss" as *;
+
+nav {
+  @include flex(row);
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .list-items {
+    display: none;
+
+    @include breakpoint("tablet") {
+      @include flex(row, 3.2rem);
+
+      .list-item {
+        a {
+          @include text-preset(5);
+          color: var(--white);
+          cursor: pointer;
+
+          &:hover,
+          &:focus {
+            border-bottom: 0.2rem solid var(--white);
+          }
+        }
+      }
+    }
+  }
+
+  .nav-mobile {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    @include breakpoint("tablet") {
+      display: none;
+    }
+  }
+
+  &.active {
+    @include flex(column, 10rem);
+    align-items: start;
+    position: absolute;
+    background-color: var(--black);
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: var(--space-40);
+
+    .list-items {
+      @include flex;
+      @include text-preset(5);
+
+      .list-item {
+        a {
+          color: var(--white);
+
+          &:hover {
+            border-bottom: 0.2rem solid var(--white);
+          }
+        }
+      }
+    }
+
+    .nav-mobile {
+      position: absolute;
+      top: 5rem;
+      right: 4rem;
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+}

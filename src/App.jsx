@@ -1,3 +1,5 @@
+import "./App.scss";
+
 import Nav from "./components/Nav";
 import ImageCard from "./components/ImageCard";
 
@@ -35,14 +37,16 @@ const imageSoccerAlt = "A soccer player with number 9 red jeysey dribling";
 const App = () => {
   return (
     <>
-      <section className="hero" aria-labelledBy="hero-title">
-        <Nav />
-        <h1 id="hero-title">Immersive experiences that deliver</h1>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="container">
+          <Nav />
+          <h1 id="hero-title">Immersive experiences that deliver</h1>
+        </div>
       </section>
-      <section className="about" aria-labelledBy="about-title">
-        <div className="about-header">
+      <section className="about" aria-labelledby="about-title">
+        <div className="about-head">
           <picture>
-            <source media="(min-width:40rem)" srcset={aboutImageDesktop} />
+            <source media="(min-width:40rem)" srcSet={aboutImageDesktop} />
             <img src={aboutImageMobile} alt="A man using VR headsets" />
           </picture>
         </div>
@@ -57,54 +61,60 @@ const App = () => {
         </div>
       </section>
       <section className="creations">
-        <ImageCard
-          imageDesktop={imageDeepEarthD}
-          imageMobile={imageDeepEarthM}
-          alt={imageDeepEarthAlt}
-          imageTitle={"Deep Earth"}
-        />
-        <ImageCard
-          imageDesktop={imageNightArcadeD}
-          imageMobile={imageNightArcadeM}
-          alt={imageNightArcadeAlt}
-          imageTitle={"Night Arcade"}
-        />
-        <ImageCard
-          imageDesktop={imageSoccerD}
-          imageMobile={imageSoccerM}
-          alt={imageSoccerAlt}
-          imageTitle={"Soccer Team VR"}
-        />
-        <ImageCard
-          imageDesktop={imageGridD}
-          imageMobile={imageGridM}
-          alt={imageGridAlt}
-          imageTitle={"The grid"}
-        />
-        <ImageCard
-          imageDesktop={imageFromAboveD}
-          imageMobile={imageFromAboveM}
-          alt={imageFromAboveAlt}
-          imageTitle={"Up From Above"}
-        />
-        <ImageCard
-          imageDesktop={imagePocketD}
-          imageMobile={imagePocketM}
-          alt={imagePocketAlt}
-          imageTitle={"Pocket Borealis"}
-        />
-        <ImageCard
-          imageDesktop={imageCuriosityD}
-          imageMobile={imageCuriosityM}
-          alt={imageCuriosityAlt}
-          imageTitle={"The curiosity"}
-        />
-        <ImageCard
-          imageDesktop={imageFishEyeD}
-          imageMobile={imageFishEyeM}
-          alt={imageFishEyeAlt}
-          imageTitle={"Make it fisheye"}
-        />
+        <div className="creations-head">
+          <h2>Our Creations</h2>
+          <a href="#!"> See All</a>
+        </div>
+        <div className="creations-body">
+          <ImageCard
+            imageDesktop={imageDeepEarthD}
+            imageMobile={imageDeepEarthM}
+            alt={imageDeepEarthAlt}
+            imageTitle={"Deep Earth"}
+          />
+          <ImageCard
+            imageDesktop={imageNightArcadeD}
+            imageMobile={imageNightArcadeM}
+            alt={imageNightArcadeAlt}
+            imageTitle={"Night Arcade"}
+          />
+          <ImageCard
+            imageDesktop={imageSoccerD}
+            imageMobile={imageSoccerM}
+            alt={imageSoccerAlt}
+            imageTitle={"Soccer Team VR"}
+          />
+          <ImageCard
+            imageDesktop={imageGridD}
+            imageMobile={imageGridM}
+            alt={imageGridAlt}
+            imageTitle={"The grid"}
+          />
+          <ImageCard
+            imageDesktop={imageFromAboveD}
+            imageMobile={imageFromAboveM}
+            alt={imageFromAboveAlt}
+            imageTitle={"Up From Above"}
+          />
+          <ImageCard
+            imageDesktop={imagePocketD}
+            imageMobile={imagePocketM}
+            alt={imagePocketAlt}
+            imageTitle={"Pocket Borealis"}
+          />
+          <ImageCard
+            imageDesktop={imageCuriosityD}
+            imageMobile={imageCuriosityM}
+            alt={imageCuriosityAlt}
+            imageTitle={"The curiosity"}
+          />
+          <ImageCard
+            imageDesktop={imageFishEyeD}
+            imageMobile={imageFishEyeM}
+            alt={imageFishEyeAlt}
+            imageTitle={"Make it fisheye"}
+          />
+        </div>
       </section>
     </>
   );

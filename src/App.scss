@@ -1,0 +1,171 @@
+@use "./index.scss" as *;
+
+.hero {
+  background-image: url(./assets/mobile/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: var(--space-40);
+  @include breakpoint("mobile") {
+    background-image: url(./assets/desktop/image-hero.jpg);
+    padding: var(--space-64);
+  }
+
+  .container {
+    height: 38rem;
+    @include flex($gap: 0);
+    justify-content: space-between;
+    @include breakpoint("mobile") {
+      height: 44rem;
+    }
+
+    h1 {
+      @include text-preset(3);
+      @include breakpoint("mobile") {
+        @include text-preset(1);
+      }
+      text-transform: uppercase;
+      color: var(--white);
+    }
+  }
+}
+.about {
+  margin-block: 9.6rem;
+  margin-inline: var(--space-24);
+  @include flex($gap: var(--space-48));
+
+  @include breakpoint("mobile") {
+    margin-inline: var(--space-80);
+  }
+  @include breakpoint("tablet") {
+    max-width: 68.75rem;
+    margin-inline: auto;
+    @include flex(row, 0);
+    position: relative;
+    height: 50rem;
+
+    &-head {
+      position: relative;
+      width: 65%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    }
+
+    &-content {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: var(--white);
+      height: 28rem;
+      width: 54rem;
+
+      h2 {
+        padding-block-start: 7rem;
+        padding-inline-start: 7rem;
+      }
+      p {
+        padding-inline-start: 7rem;
+      }
+    }
+  }
+  &-content {
+    @include flex($gap: var(--space-16));
+    @include breakpoint("mobile") {
+      @include flex($gap: var(--space-24));
+    }
+
+    h2 {
+      @include text-preset(4);
+      text-transform: uppercase;
+      text-align: center;
+
+      @include breakpoint("mobile") {
+        @include text-preset(2);
+      }
+      @include breakpoint("tablet") {
+        text-align: left;
+      }
+    }
+
+    p {
+      @include text-preset(6);
+      text-align: center;
+
+      @include breakpoint("tablet") {
+        text-align: left;
+      }
+    }
+  }
+}
+.creations {
+  @include flex($gap: var(--space-48));
+  margin-inline: var(--space-24);
+
+  @include breakpoint("mobile") {
+    @include flex($gap: var(--space-32));
+    margin-inline: var(--space-80);
+  }
+  @include breakpoint("tablet") {
+    @include flex($gap: var(--space-80));
+    max-width: 68.75rem;
+    margin-inline: auto;
+  }
+
+  &-head {
+    h2 {
+      @include text-preset(4);
+      text-transform: uppercase;
+      color: var(--black);
+      text-align: center;
+
+      @include breakpoint("mobile") {
+        @include text-preset(2);
+      }
+    }
+    a {
+      text-decoration: none;
+      color: var(--black);
+      padding: 1.2rem 4rem;
+      background-color: var(--light-blue);
+      border: 1px solid var(--grey);
+      @include text-preset(7);
+      text-transform: uppercase;
+      display: none;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background-color: var(--blue);
+      }
+    }
+
+    @include breakpoint("tablet") {
+      @include flex(row, 0);
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        text-align: left;
+      }
+      a {
+        display: block;
+      }
+    }
+  }
+
+  &-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-24);
+    margin-inline: auto;
+
+    @include breakpoint("tablet") {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-32);
+    }
+  }
+}
