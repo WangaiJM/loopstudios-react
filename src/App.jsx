@@ -47,7 +47,10 @@ const App = () => {
         <div className="about-head">
           <picture>
             <source media="(min-width:40rem)" srcSet={aboutImageDesktop} />
-            <img src={aboutImageMobile} alt="A man using VR headsets" />
+            <img
+              src={aboutImageMobile}
+              alt="Person experiencing virtual reality using a headset"
+            />
           </picture>
         </div>
         <div className="about-content">
@@ -60,9 +63,9 @@ const App = () => {
           </p>
         </div>
       </section>
-      <section className="creations">
+      <section className="creations" aria-labelledby="creations-title">
         <div className="creations-head">
-          <h2>Our Creations</h2>
+          <h2 id="creations-title">Our Creations</h2>
           <a href="#!"> See All</a>
         </div>
         <div className="creations-body">

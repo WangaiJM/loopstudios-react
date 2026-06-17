@@ -8,7 +8,7 @@ const Nav = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <nav className={isActive ? "active" : ""}>
+    <nav className={isActive ? "active" : ""} id="mobile-menu">
       <img src={logo} alt="Logo" />
       <ul className="list-items">
         <li className="list-item">
@@ -30,11 +30,14 @@ const Nav = () => {
       <button
         className="nav-mobile"
         onClick={() => setIsActive((prev) => !prev)}
+        aria-label={isActive ? "Close menu" : "Open menu"}
+        aria-expanded={isActive}
+        aria-controls="mobile-menu"
       >
         {isActive ? (
-          <img src={close} alt="Close Menu" />
+          <img src={close} alt="" aria-hidden="true" />
         ) : (
-          <img src={hambuger} alt="Open Menu" />
+          <img src={hambuger} alt="" aria-hidden="true" />
         )}
       </button>
     </nav>
